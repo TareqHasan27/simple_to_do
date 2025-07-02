@@ -4,6 +4,248 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'sans-serif';
+            background: #fff8e1;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 20px 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header h5 {
+            opacity: 0.8;
+            font-size: 1em;
+        }
+
+        .todo-form {
+            padding: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        .todo-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid black;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .todo-input:focus {
+            border-color: #667eea;         
+        }
+
+        .priority-select {
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 50px;
+            font-size: 16px;
+            outline: none;
+            background: white;
+            cursor: pointer;
+        }
+
+        .priority-select:focus {
+            border-color: #667eea;
+        }
+
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .filter-tab {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #666;
+        }
+
+        .filter-tab:hover {
+            background: #e9ecef;
+        }
+
+        .filter-tab.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .todo-list {
+            padding: 20px 30px 30px;
+            min-height: 300px;
+        }
+
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .todo-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .todo-item.high-priority {
+            border-left-color: #ff4757;
+            background: linear-gradient(135deg, #fff 0%, #ffebee 100%);
+        }
+
+        .todo-item.medium-priority {
+            border-left-color: #ffa502;
+            background: linear-gradient(135deg, #fff 0%, #fff8e1 100%);
+        }
+
+        .todo-item.low-priority {
+            border-left-color: #2ed573;
+            background: linear-gradient(135deg, #fff 0%, #e8f5e8 100%);
+        }
+
+        .todo-checkbox {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            margin-right: 15px;
+            cursor: pointer;
+            position: relative;
+            
+        }
+
+        .todo-checkbox:checked {
+            background: #667eea;
+            border-color: #667eea;
+        }
+
+        .todo-checkbox:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .todo-checkbox:checked + .todo-text {
+            opacity: 0.4;
+        }
+
+        .todo-text {
+            flex: 1;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .priority-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .priority-high {
+            background: #ff4757;
+            color: white;
+        }
+
+        .priority-medium {
+            background: #ffa502;
+            color: white;
+        }
+
+        .priority-low {
+            background: #2ed573;
+            color: white;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+
+        .empty-state h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .stats {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .stat-item {
+            flex: 1;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+            letter-spacing: 0.5px;
+        }          
+    </style>
+
+
 </head>
 <body>
     <div class="container">
