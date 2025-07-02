@@ -6,6 +6,70 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <h1>To-Do</h1>
+            <h5>Organize your tasks with style</h5>
+        </div>
+
+        <form class="todo-form">
+            <div class="input-group">
+                <input type="text" class="todo-input" placeholder="Add a new task..." required>
+                <select class="priority-select">
+                    <option value="low" selected>Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+            </div>
+            <div class="filter-tabs">
+                <a href="#all" class="filter-tab active">All Tasks</a>
+                <a href="#active" class="filter-tab">Active</a>
+                <a href="#completed" class="filter-tab">Completed</a>
+                <a href="#high" class="filter-tab">Priority</a>
+            </div>
+        </form>
+
+        <div class="todo-list">
     
+            <div class="todo-item high-priority">
+                <input type="checkbox" class="todo-checkbox" id="task1">
+                <label for="task1" class="todo-text">Complete To Do</label>
+                <span class="priority-badge priority-high">High</span>
+            </div>
+
+            <div class="todo-item medium-priority">
+                <input type="checkbox" class="todo-checkbox" id="task2" checked>
+                <label for="task2" class="todo-text">Tour De Sunamganj</label>
+                <span class="priority-badge priority-medium">Medium</span>
+            </div>
+
+            <div class="todo-item low-priority">
+                <input type="checkbox" class="todo-checkbox" id="task3">
+                <label for="task3" class="todo-text">Entertainment</label>
+                <span class="priority-badge priority-low">Low</span>
+            </div>
+
+            <div class="todo-item medium-priority">
+                <input type="checkbox" class="todo-checkbox" id="task4">
+                <label for="task4" class="todo-text">DBMS</label>
+                <span class="priority-badge priority-medium">Medium</span>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number">4</span>
+                <span class="stat-label">Total</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Active</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1</span>
+                <span class="stat-label">Completed</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
